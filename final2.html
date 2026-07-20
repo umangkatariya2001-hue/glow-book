@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Your Beauty Service - Amisha Make Over</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+
+        body {
+
+            background: #fff;
+            color: #222;
+
+        }
+
+
+
+        /* ================= NAVBAR ================= */
+
+
+        nav {
+
+            height: 70px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+
+        }
+
+
+        .logo {
+
+            font-size: 24px;
+            font-weight: 700;
+            color: #111;
+
+        }
+
+
+        .logo span {
+
+            color: #d4af37;
+
+        }
+
+
+
+        nav ul {
+
+            display: flex;
+            gap: 35px;
+            list-style: none;
+
+        }
+
+
+        nav ul li a {
+
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+
+        }
+
+
+        .book-btn {
+
+            background: #111;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+
+        }
+
+
+
+        /* ================= TITLE ================= */
+
+
+        .heading {
+
+            padding: 20px 8%;
+            border-bottom: 1px solid #eee;
+
+        }
+
+
+        .heading h1 {
+
+            font-size: 24px;
+
+        }
+
+
+
+        /* ================= MAIN BOOKING AREA ================= */
+
+
+        .booking-container {
+
+            display: grid;
+            grid-template-columns: 280px 1fr 300px;
+            gap: 20px;
+            padding: 40px 8%;
+
+        }
+
+
+
+        /* ================= CATEGORY ================= */
+
+
+        .category-box {
+
+            border: 1px solid #eee;
+            border-radius: 20px;
+            padding: 20px;
+
+        }
+
+
+        .search {
+
+            width: 100%;
+            padding: 12px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            margin-bottom: 25px;
+
+        }
+
+
+
+        .category-box h4 {
+
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .categories {
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+        }
+
+
+
+        .cat {
+
+            text-align: center;
+            font-size: 12px;
+            cursor: pointer;
+
+        }
+
+
+
+        .cat img {
+
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #eee;
+
+        }
+
+
+
+        /* ================= SERVICE AREA ================= */
+
+
+        .services-area {
+
+            padding: 0 10px;
+
+        }
+
+
+
+        .service-count {
+
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 15px;
+
+        }
+
+
+
+        .service-grid {
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+        }
+
+
+
+        .service-card {
+
+            border: 1px solid #eee;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+
+        }
+
+
+
+        .service-card img {
+
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+
+        }
+
+
+
+        .service-content {
+
+            padding: 15px;
+
+        }
+
+
+
+        .service-content h3 {
+
+            font-size: 16px;
+
+        }
+
+
+
+        .service-content p {
+
+            font-size: 13px;
+            color: #777;
+
+        }
+
+
+
+        .price {
+
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 10px;
+
+        }
+
+
+
+        .add-btn {
+
+            background: #111;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            float: right;
+            cursor: pointer;
+
+        }
+
+
+
+
+        /* ================= CART ================= */
+
+
+        .cart {
+
+            border: 1px solid #eee;
+            border-radius: 20px;
+            padding: 25px;
+            height: 400px;
+
+        }
+
+
+        .cart h3 {
+
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+
+        }
+
+
+        .empty {
+
+            text-align: center;
+            margin-top: 100px;
+            color: #aaa;
+
+        }
+
+
+
+
+        @media(max-width:900px) {
+
+
+            .booking-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .service-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            nav ul {
+
+                display: none;
+
+            }
+
+
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- NAVBAR -->
+
+
+    <nav>
+
+
+        <div class="logo">
+
+            AMISHA <span>MAKE OVER</span>
+
+        </div>
+
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="#">Services</a></li>
+
+            <li><a href="#">About</a></li>
+
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+
+
+
+        <a href="#" class="book-btn">
+
+            Book Now
+
+        </a>
+
+
+
+    </nav>
+
+
+
+
+    <div class="heading">
+
+        <h1>
+            Book Your Beauty Service
+        </h1>
+
+    </div>
+
+
+
+
+    <div class="booking-container">
+
+
+
+        <!-- CATEGORY -->
+
+
+        <div class="category-box">
+
+
+            <input class="search" placeholder="Search...">
+
+
+            <h4>CATEGORIES</h4>
+
+
+
+            <div class="categories">
+
+
+                <div class="cat">
+
+                    <img
+                        src="https://media.istockphoto.com/id/1399469980/photo/close-up-portrait-of-anorganic-facial-mask-application-at-spa-salon-facial-treatment-skin.jpg?s=612x612&w=0&k=20&c=ZvZi_bdGLicsykUtlrHgQe70ftZzd_xPKvq2vzfOyV0=">
+
+                    <p>Facial</p>
+
+                </div>
+
+
+
+                <div class="cat">
+
+                    <img
+                        src="https://media.istockphoto.com/id/509176778/photo/young-woman-washing-hair-in-salon.jpg?s=612x612&w=0&k=20&c=7gik9bbDGqMLJlx1UhxFbIUsTCud4XNOj1go4pItjNM=">
+
+                    <p>Hair</p>
+
+                </div>
+
+
+
+                <div class="cat">
+
+                    <img
+                        src="https://t3.ftcdn.net/jpg/02/28/88/76/360_F_228887602_iGBCS39wUZ9w3FdXYTnAoIhvH4oOrAwQ.jpg">
+
+                    <p>Makeup</p>
+
+                </div>
+
+
+
+                <div class="cat">
+
+                    <img
+                        src="https://media.weddingz.in/images/8cf8f1eb3fdcb4c938588d40e0333a21/Bridal-Makeup-looks-which-rocked-the-2018-Indian-Wedding-Season29.jpg">
+
+                    <p>Bridal</p>
+
+                </div>
+
+
+
+                <div class="cat">
+
+                    <img
+                        src="https://media.istockphoto.com/photos/professional-wearing-white-jacket-making-wax-depilation-picture-id1131441553?k=20&m=1131441553&s=612x612&w=0&h=ohoKjSDXI41g_Po7rAdp2IQKwiPkCfw6twJefkjLMhc=">
+
+                    <p>Wax</p>
+
+                </div>
+
+
+
+                <div class="cat">
+
+                    <img src="https://chicincubicles.com/wp-content/uploads/2024/05/image-73.png">
+
+                    <p>Nail Art</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img src="https://images.303magazine.com/uploads/2024/01/Facial-providence-ri.jpg">
+
+                    <p>Facial</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img src="https://images.herzindagi.info/image/2021/Feb/how-to-do-de-tan-facial.jpg">
+
+                    <p>D-Tan</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img
+                        src="https://images.squarespace-cdn.com/content/v1/580f0fc837c581ee0cd5179d/1477384551594-CRKESOUGI2FR6FXP1PH4/image-asset.jpeg">
+
+                    <p>Threading</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img
+                        src="https://lh6.googleusercontent.com/LBhO2mGUOqGUy_eIssKnZp2PPA2iZAZtnfnaxmcTV6MGW-rDMwMArrBLpQ760XL4Eh9vA4j0nyh8SO-Q02n1tTSdjUqr8XSDeQdJK0AyF1_qoEDMKALTNXgeQAPdlrdUMk0HpwzjdisQ9NsdNB8ZqotmiozckI1HwdirLiu_FJEmQGqx9ojQMuPpNXV7TQ">
+
+                    <p>Mahendi</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img
+                        src="https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?cs=srgb&dl=pexels-cottonbro-3997391.jpg&fm=jpg">
+
+                    <p>Manicure</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img
+                        src="https://tse3.mm.bing.net/th/id/OIP.3tAIm97Dgngk5vHmsZ80ywHaNK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+
+                    <p>Padicure</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img src="https://www.boldsky.com/img/2018/04/article5-salonstylecleanupathome-1524545790.jpg">
+
+                    <p>Clean-up</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img
+                        src="https://cdn.cleancommit.io/alevo/app/uploads/2024/07/13121840/caucasian-woman-enjoying-relaxing-antistress-head-massage-pampering-facial-beauty-skin-recreation-leisure-warm-candle-lighting-ambient.jpg">
+
+                    <p>Body Massage</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img
+                        src="https://sugarbeachweddings.com/wp-content/uploads/2025/06/ultimate-kiss-beach-wedding-11-860x515.jpg">
+
+                    <p>Prewedding Pacakage</p>
+
+                </div>
+
+                <div class="cat">
+
+                    <img src="https://wallpaperbat.com/img/885681-indian-bride-picture.jpg">
+
+                    <p>Bridal Packages</p>
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- SERVICES -->
+
+
+        <div class="services-area">
+
+
+            <div class="service-count">
+
+                24 services found
+
+            </div>
+
+
+
+            <div class="service-grid">
+
+
+
+                <div class="service-card">
+
+
+                    <img src="facial.jpg">
+
+
+                    <div class="service-content">
+
+
+                        <span style="background:#eee;padding:5px 10px;border-radius:20px;font-size:12px;">
+                            Facial
+                        </span>
+
+
+                        <h3>
+                            Glow Facial Treatment
+                        </h3>
+
+
+                        <p>
+                            Deep cleansing facial for glowing skin
+                        </p>
+
+
+                        <p>
+                            ⭐ 4.8 (120 Reviews)
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹399
+
+                            <button class="add-btn" onclick="addCart('Glow Facial Treatment',399)">
+                                Add →
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="service-card">
+
+
+                    <img src="bridal.jpg">
+
+
+                    <div class="service-content">
+
+
+                        <span style="background:#eee;padding:5px 10px;border-radius:20px;font-size:12px;">
+                            Bridal
+                        </span>
+
+
+                        <h3>
+                            Royal Bridal Makeup
+                        </h3>
+
+
+                        <p>
+                            Luxury wedding makeover package
+                        </p>
+
+
+                        <p>
+                            ⭐ 4.9 (200 Reviews)
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹7999
+
+                            <button class="add-btn" onclick="addCart('Royal Bridal Makeup',7999)">
+                                Add →
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="service-card">
+
+
+                    <img src="hair.jpg">
+
+
+                    <div class="service-content">
+
+
+                        <span style="background:#eee;padding:5px 10px;border-radius:20px;font-size:12px;">
+                            Hair
+                        </span>
+
+
+                        <h3>
+                            Hair Styling
+                        </h3>
+
+
+                        <p>
+                            Modern hairstyle for events
+                        </p>
+
+
+                        <p>
+                            ⭐ 4.7 (90 Reviews)
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹499
+
+                            <button class="add-btn" onclick="addCart('Hair Styling',499)">
+                                Add →
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <div class="service-card">
+
+
+                    <img src="makeup.jpg">
+
+
+                    <div class="service-content">
+
+
+                        <span style="background:#eee;padding:5px 10px;border-radius:20px;font-size:12px;">
+                            Makeup
+                        </span>
+
+
+                        <h3>
+                            HD Makeup
+                        </h3>
+
+
+                        <p>
+                            Professional HD finish makeup
+                        </p>
+
+
+                        <p>
+                            ⭐ 4.8 (150 Reviews)
+                        </p>
+
+
+                        <div class="price">
+
+                            ₹1999
+
+                            <button class="add-btn" onclick="addCart('HD Makeup',1999)">
+                                Add →
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- CART -->
+
+
+        <div class="cart">
+
+
+            <h3>
+
+                🛍 Your Cart
+
+            </h3>
+
+
+
+            <div class="empty">
+
+                No services added yet
+
+                <br>
+
+                Pick services from the list
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+    <script>
+
+
+        let cart = [];
+
+
+
+        function addCart(name, price) {
+
+
+            cart.push({
+
+                name: name,
+                price: price
+
+            });
+
+
+            showCart();
+
+
+        }
+
+
+
+
+        function removeCart(index) {
+
+
+            cart.splice(index, 1);
+
+
+            showCart();
+
+
+        }
+
+
+
+
+
+        function showCart() {
+
+
+            let cartBox = document.querySelector(".cart");
+
+
+            let html = `
+    
+    
+    <h3>
+    🛍 Your Cart
+    </h3>
+    
+    
+    `;
+
+
+            let total = 0;
+
+
+
+            if (cart.length == 0) {
+
+
+                html += `
+    
+    <div class="empty">
+    
+    No services added yet
+    
+    <br>
+    
+    Pick services from the list
+    
+    </div>
+    
+    `;
+
+
+            }
+
+
+
+            else {
+
+
+                cart.forEach((item, index) => {
+
+
+                    total += item.price;
+
+
+
+                    html += `
+    
+    <div style="
+    border-bottom:1px solid #eee;
+    padding:15px 0;
+    ">
+    
+    
+    <b>
+    ${item.name}
+    </b>
+    
+    
+    <p>
+    ₹${item.price}
+    </p>
+    
+    
+    
+    <button onclick="removeCart(${index})"
+    style="
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    padding:5px 15px;
+    border-radius:20px;
+    ">
+    
+    Remove
+    
+    </button>
+    
+    
+    </div>
+    
+    
+    `;
+
+
+
+                });
+
+
+
+                html += `
+    
+    <h3 style="margin-top:20px">
+    
+    Total : ₹${total}
+    
+    </h3>
+    
+    
+    
+    <button onclick="bookNow()"
+    
+    style="
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    background:#d4af37;
+    border:none;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+    ">
+    
+    Book Appointment
+    
+    </button>
+    
+    `;
+
+
+
+            }
+
+
+
+            cartBox.innerHTML = html;
+
+
+
+        }
+
+
+
+
+
+        function bookNow() {
+
+
+            let message = "🌸 AMISHA MAKE OVER BOOKING 🌸%0A%0A";
+
+
+            cart.forEach((item) => {
+
+
+                message +=
+                    "💄 " + item.name +
+                    " - ₹" + item.price +
+                    "%0A";
+
+
+            });
+
+
+
+            let total = cart.reduce(
+                (sum, item) => sum + item.price, 0
+            );
+
+
+
+            message +=
+                "%0A💰 Total: ₹" + total;
+
+
+
+            let whatsapp =
+                "https://wa.me/916354246568?text=" + message;
+
+
+
+            window.open(whatsapp, "_blank");
+
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
